@@ -13,6 +13,11 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+set(CMAKE_DEBUG_POSTFIX "d" )
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/INSTALL")
+
+message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
+
 ##############################################################################
 # Build options for enabling/disabling demos and tests
 ##############################################################################
@@ -152,6 +157,8 @@ configure_file(
 ##############################################################################
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
+
+
 
 # Configure version information for shared libraries
 if(ZIPPER_SHARED_LIB)
